@@ -43,7 +43,7 @@ public class RecordService {
 
 	
 	@Transactional(readOnly = true)
-	public Page<RecordDTO> findByMoments(Instant minDate, Instant maxDate, PageRequest pageRequest) {
+	public Page<RecordDTO> findByMoments(Instant minDate, Instant maxDate, PageRequest pageRequest){
 		return repository.findByMoments(minDate, maxDate, pageRequest).map(x -> new RecordDTO(x) );
 	}
 	
